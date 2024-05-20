@@ -55,7 +55,7 @@ class MainController extends Controller
         $specials = Special::latest()->take(6)->get();
         $contacts = Contact::latest()->take(1)->get();
 
-        return view('detail', compact(
+        return view('cam.detail', compact(
             'prices',
             'teachers',
             'specials',
