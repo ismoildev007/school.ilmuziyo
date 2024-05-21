@@ -11,7 +11,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <h1 class="mt-5" style=";color: #00838d">{{ $flag['title_' .$lang] }}</h1>
                     </div>
                     <div class="col-md-5">
-                        <img src="{{ asset('storage/' . $flag->photo) }}" alt="" style="border-radius: 40px;width: 100%;">
+                        <img src="{{ asset( $flag->photo) }}" alt="" style="border-radius: 40px;width: 100%;">
                     </div>
                 @endforeach
             </div>
@@ -33,7 +33,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <button class="btn btn-light mt-2 mb-2" style="border-radius: 20px;">24/7 xavfsizlik</button>
                         </div>
                     @foreach($inf_photos as $inf_photo)
-                        <div class="col-md-7"><img src="{{ asset('storage/' . $inf_photo->photo ) }}" alt="" style="width: 100%;border-radius: 30px"></div>
+                        <div class="col-md-7"><img src="{{ asset( $inf_photo->photo ) }}" alt="" style="width: 100%;border-radius: 30px"></div>
                     @endforeach
                 </div>
             </div>
@@ -96,7 +96,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         @foreach($teachers as $teacher)
                             <div class="col-md-3 text-center">
                                 <a href="/shohruh" class="text-center">
-                                    <img src="{{ asset('storage/' . $teacher->photo) }}" class="card-img-top" alt="..." style="height: 200px;width: 200px;border-radius: 50%">
+                                    <img src="{{ asset( $teacher->photo) }}" class="card-img-top" alt="..." style="height: 200px;width: 200px;border-radius: 50%">
                                     <div class="card-body">
                                         <b>{{ $teacher->title_uz }}</b>
                                         <p class="text-center">{{ $teacher['description_' . $lang] }}</p>
@@ -158,7 +158,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         @foreach($specials as $special)
                             <div class="col-md-4">
                                 <a href="/uz" class="card n">
-                                    <img src="{{ asset('storage/' . $special->photo) }}" class="card-img-top" alt="..." style="height: 200px;width: 100%;">
+                                    <img src="{{ asset( $special->photo) }}" class="card-img-top" alt="..." style="height: 200px;width: 100%;">
                                     <div class="card-body">
                                         <p class="card-text">{{ $special['description_' . $lang] }}</p>
                                     </div>

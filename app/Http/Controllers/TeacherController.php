@@ -36,8 +36,11 @@ class TeacherController extends Controller
         if ($request->hasFile('photo'))
         {
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
 
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         Teacher::create([
@@ -67,13 +70,17 @@ class TeacherController extends Controller
     {
         if ($request->hasFile('photo'))
         {
-            if (isset($educational->photo))
+            if (isset($teacher->photo))
             {
-                Storage::delete($educational->photo);
+                Storage::delete($teacher->photo);
             }
 
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
+
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         $teacher->update([

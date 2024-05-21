@@ -37,8 +37,11 @@ class FlagController extends Controller
         if ($request->hasFile('photo'))
         {
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
 
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         Flag::create([
@@ -73,13 +76,17 @@ class FlagController extends Controller
     {
         if ($request->hasFile('photo'))
         {
-            if (isset($educational->photo))
+            if (isset($flag->photo))
             {
-                Storage::delete($educational->photo);
+                Storage::delete($flag->photo);
             }
 
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
+
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         $flag->update([

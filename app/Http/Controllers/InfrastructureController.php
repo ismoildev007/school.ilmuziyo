@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activities;
-use App\Models\Blog;
-use App\Models\Flag;
+
 use App\Models\Infrastructure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -38,8 +36,11 @@ class InfrastructureController extends Controller
         if ($request->hasFile('photo'))
         {
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
 
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         Infrastructure::create([
@@ -68,13 +69,17 @@ class InfrastructureController extends Controller
     {
         if ($request->hasFile('photo'))
         {
-            if (isset($educational->photo))
+            if (isset($infrastructure->photo))
             {
-                Storage::delete($educational->photo);
+                Storage::delete($infrastructure->photo);
             }
 
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
+
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         $infrastructure->update([

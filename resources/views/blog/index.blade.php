@@ -20,7 +20,7 @@
                                 <tr>
                                     <td>{{ $blog->id }}</td>
                                     <td>{{ $blog->description_uz }}</td>
-                                    <td><img src="{{ asset('storage/' . $blog->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
+                                    <td><img src="{{ asset( $blog->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('blog.show', ['blog' => $blog->id]) }}" class="mr-1"><i class="fa fa-eye"></i></a>

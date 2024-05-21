@@ -41,7 +41,7 @@
                                 <td>{{ $abouts->big_language_uz }}</td>
                                 <td>{{ $abouts->big_language_ru }}</td>
                                 <td>{{ $abouts->big_language_en }}</td>
-                                <td><img src="{{ asset('storage/' . $abouts->photo) }}" alt="" style="width: 120px;"></td>
+                                <td><img src="{{ asset( $abouts->photo) }}" alt="" style="width: 120px;"></td>
                                 <td>
                                     <div class="d-flex tools">
                                         <a href="{{ route('about.edit', ['about' => $abouts->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>

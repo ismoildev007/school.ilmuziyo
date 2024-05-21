@@ -22,7 +22,7 @@
                                     <td>{{ $card->id }}</td>
                                     <td>{{ $card->title_uz }}</td>
                                     <td>{{ $card->description_uz }}</td>
-                                    <td><img src="{{ asset('storage/' . $card->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
+                                    <td><img src="{{ asset( $card->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('card.show', ['card' => $card->id]) }}" class="mr-1"><i class="fa fa-eye"></i></a>

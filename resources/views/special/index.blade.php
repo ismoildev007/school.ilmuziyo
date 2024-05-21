@@ -24,7 +24,7 @@
                                     <td>{{ $special->description_uz }}</td>
                                     <td>{{ $special->description_ru }}</td>
                                     <td>{{ $special->description_en }}</td>
-                                    <td><img src="{{ asset('storage/' . $special->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
+                                    <td><img src="{{ asset( $special->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('special.edit', ['special' => $special->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>

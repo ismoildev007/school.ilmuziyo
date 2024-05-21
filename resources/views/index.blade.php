@@ -46,7 +46,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     </div>
                     @foreach($photo as $to)
                         <div class="col-md-4 col-12">
-                            <img style="width: 100%;" src="{{ asset('storage/' . $to->photo) }}" alt="">
+                            <img style="width: 100%;" src="{{ asset( $to->photo) }}" alt="">
                             </div>
                         </div>
                     @endforeach
@@ -102,7 +102,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         </div>
                     @endforeach
                     @foreach($abouts as $about)
-                            <div class="col-11 col-lg-5 video-box d-flex justify-content-center align-items-stretch position-relative" style="background-image: url('{{ asset('storage/' . $about->photo) }}')">
+                            <div class="col-11 col-lg-5 video-box d-flex justify-content-center align-items-stretch position-relative" style="background-image: url('{{ asset( $about->photo) }}')">
                                 <a href="/" class="glightbox play-btn mb-4"></a>
                             </div>
                     @endforeach
@@ -176,7 +176,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="img-container">
-                                    <img src="{{ asset('storage/' . $active->photo) }}" alt=""/>
+                                    <img src="{{ asset( $active->photo) }}" alt=""/>
                                 </div>
                                 <div class="card-details">
                                     <h2>{{ $active['title_' . $lang] }}</h2>
@@ -343,7 +343,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     @foreach($blogs as $blog)
                         <div class="col-md-4">
                             <a href="/shohruh" class="card n">
-                                <img src="{{ asset('storage/' . $blog->photo) }}" class="card-img-top" alt="..." style="height: 200px;width: 100%;">
+                                <img src="{{ asset( $blog->photo) }}" class="card-img-top" alt="..." style="height: 200px;width: 100%;">
                                 <div class="card-body">
                                     <p class="card-text">{{ $blog['description_' . $lang] }}</p>
                                 </div>

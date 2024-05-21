@@ -7,6 +7,7 @@
 
                 <form action="{{ route('about.update', ['about' => $abouts->id]) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="control-group">
                         <input type="text" id="if" class="form-control p-2" name="description_uz"
                                placeholder="description_uz" value="{{ $abouts->description_uz }}"/>

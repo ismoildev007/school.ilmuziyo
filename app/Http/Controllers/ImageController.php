@@ -36,8 +36,11 @@ class ImageController extends Controller
         if ($request->hasFile('photo'))
         {
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
 
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         Image::create([
@@ -66,13 +69,17 @@ class ImageController extends Controller
     {
         if ($request->hasFile('photo'))
         {
-            if (isset($educational->photo))
+            if (isset($image->photo))
             {
-                Storage::delete($educational->photo);
+                Storage::delete($image->photo);
             }
 
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
+
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         $image->update([

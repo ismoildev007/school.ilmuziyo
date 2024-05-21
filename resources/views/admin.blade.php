@@ -13,7 +13,6 @@
                                 <th scope="col">Id</th>
                                 <th scope="col">Title_uz</th>
                                 <th scope="col">Description_uz</th>
-                                <th scope="col">photo</th>
                                 <th scope="col">operatsiyalar</th>
                             </tr>
                             </thead>

@@ -18,7 +18,7 @@
                             @foreach($images as $image)
                                 <tr>
                                     <td>{{ $image->id }}</td>
-                                    <td><img src="{{ asset('storage/' . $image->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
+                                    <td><img src="{{ asset( $image->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('image.edit', ['image' => $image->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>

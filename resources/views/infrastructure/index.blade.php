@@ -24,7 +24,7 @@
                                     <td>{{ $infrastructure->title_uz }}</td>
                                     <td>{{ $infrastructure->title_ru }}</td>
                                     <td>{{ $infrastructure->title_en }}</td>
-                                    <td><img src="{{ asset('storage/' . $infrastructure->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
+                                    <td><img src="{{ asset( $infrastructure->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('infrastructure.edit', ['infrastructure' => $infrastructure->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>

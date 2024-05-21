@@ -22,7 +22,7 @@
                                     <td>{{ $active->id }}</td>
                                     <td>{{ $active->title_uz }}</td>
                                     <td>{{ $active->description_uz }}</td>
-                                    <td><img src="{{ asset('storage/' . $active->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
+                                    <td><img src="{{ asset( $active->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('activities.show', ['activity' => $active->id]) }}" class="mr-1"><i class="fa fa-eye"></i></a>

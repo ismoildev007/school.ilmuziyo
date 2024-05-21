@@ -23,7 +23,7 @@
                                 <td>{{ $flags->title_uz }}</td>
                                 <td>{{ $flags->title_ru }}</td>
                                 <td>{{ $flags->title_en }}</td>
-                                <td><img src="{{ asset('storage/' . $flags->photo) }}" alt="" style="width: 120px;"></td>
+                                <td><img src="{{ asset( $flags->photo) }}" alt="" style="width: 120px;"></td>
                                 <td>
                                     <div class="d-flex tools">
                                         <a href="{{ route('flag.edit', ['flag' => $flags->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>

@@ -29,7 +29,7 @@
                                 <td>{{ $cards->description_uz }}</td>
                                 <td>{{ $cards->description_ru }}</td>
                                 <td>{{ $cards->description_en }}</td>
-                                <td><img src="{{ asset('storage/' . $cards->photo) }}" alt="" style="width: 120px;"></td>
+                                <td><img src="{{ asset( $cards->photo) }}" alt="" style="width: 120px;"></td>
                                 <td>
                                     <div class="d-flex tools">
                                         <a href="{{ route('card.edit', ['card' => $cards->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>

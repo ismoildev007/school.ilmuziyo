@@ -26,7 +26,7 @@
                                     <td>{{ $teacher->description_uz }}</td>
                                     <td>{{ $teacher->description_ru }}</td>
                                     <td>{{ $teacher->description_en }}</td>
-                                    <td><img src="{{ asset('storage/' . $teacher->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
+                                    <td><img src="{{ asset( $teacher->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('teacher.edit', ['teacher' => $teacher->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>

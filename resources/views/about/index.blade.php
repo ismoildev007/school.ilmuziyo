@@ -26,7 +26,7 @@
                                     <td>{{ $about->sciences_uz }}</td>
                                     <td>{{ $about->language_uz }}</td>
                                     <td>{{ $about->big_language_uz }}</td>
-                                    <td><img src="{{ asset('storage/' . $about->photo) }}" alt="" style="width: 120px;"></td>
+                                    <td><img src="{{ asset( $about->photo) }}" alt="" style="width: 120px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('about.show', ['about' => $about->id]) }}" class="mr-1"><i class="fa fa-eye"></i></a>

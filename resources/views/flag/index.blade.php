@@ -20,7 +20,7 @@
                                 <tr>
                                     <td>{{ $flag->id }}</td>
                                     <td>{{ $flag->title_uz }}</td>
-                                    <td><img src="{{ asset('storage/' . $flag->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
+                                    <td><img src="{{ asset( $flag->photo) }}" alt="" style="width: 100px;height: 100px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('flag.show', ['flag' => $flag->id]) }}" class="mr-1"><i class="fa fa-eye"></i></a>

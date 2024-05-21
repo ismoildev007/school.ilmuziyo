@@ -32,12 +32,12 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('photo'))
-        {
-            $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
+        $name = $request->file('photo')->getClientOriginalName();
 
-        }
+        $destinationPath = public_path('post_photo');
+        $request->file('photo')->move($destinationPath, $name);
+
+        $path = 'post_photo/' . $name;
 
         About::create([
             'description_uz' => $request->description_uz,
@@ -80,13 +80,17 @@ class AboutController extends Controller
     {
         if ($request->hasFile('photo'))
         {
-            if (isset($educational->photo))
+            if (isset($about->photo))
             {
-                Storage::delete($educational->photo);
+                Storage::delete($about->photo);
             }
 
             $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
+
+            $destinationPath = public_path('post_photo');
+            $request->file('photo')->move($destinationPath, $name);
+
+            $path = 'post_photo/' . $name;
         }
 
         $about->update([

@@ -23,7 +23,7 @@
                                 <td>{{ $blogs->description_uz }}</td>
                                 <td>{{ $blogs->description_ru }}</td>
                                 <td>{{ $blogs->description_en }}</td>
-                                <td><img src="{{ asset('storage/' . $blogs->photo) }}" alt="" style="width: 120px;"></td>
+                                <td><img src="{{ asset( $blogs->photo) }}" alt="" style="width: 120px;"></td>
                                 <td>
                                     <div class="d-flex tools">
                                         <a href="{{ route('blog.edit', ['blog' => $blogs->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>
