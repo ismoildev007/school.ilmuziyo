@@ -1,7 +1,11 @@
 <?php
 $lang = \Illuminate\Support\Facades\App::getLocale()
 ?>
-
+<style>
+    .bgg{
+        color: #f29906 !important;
+    }
+</style>
 <x-layouts.main>
     <main id="main">
         <section style="border-radius: 30px; margin-top: 80px;background: url('../assets/img/maktabim.jpg');background-size: cover; max-width: 100%;" id="hero" class="hero px-3 mx-2 d-flex align-items-center">
@@ -30,23 +34,23 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <div class="row">
                             @foreach($cards as $card)
                                 <div class="col-md-6">
-                                    <a class="card1" href="#">
+                                    <div class="card1" >
                                         <h3>{{ $card['title_' . $lang] }}</h3>
                                         <p class="small">{{ $card['description_' . $lang] }}</p>
                                         <div class="dimmer"></div>
-                                        <div class="go-corner" href="#">
+                                        <div class="go-corner">
                                             <div class="go-arrow">
                                                 →
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                     @foreach($photo as $to)
                         <div class="col-md-4 col-12">
-                            <img style="width: 100%;" src="{{ asset( $to->photo) }}" alt="">
+                            <img style="width: 100%;     margin-top: 10px;    height: 96%;  border-radius: 15px;" src="{{ asset( $to->photo) }}" alt="">
                             </div>
                         </div>
                     @endforeach
@@ -132,8 +136,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-white solo">
-                        <span style="font-size: 58px" class="text_a">{{ __('words.sign_text') }}</span>
-                        <h4 style="color: white;font-size: 27px" class="text_b">{{ __('words.info') }}</h4>
+                        <span style="font-size: 50px" class="text_a">{{ __('words.sign_text') }}</span>
+                        <h4 style="color: white;font-size: 23px;margin-top: 12px;" class="text_b">{{ __('words.info') }}</h4>
                     </div>
                     <div class="col-md-6 text-white mb-3 solo_back">
                         <span style="font-size: 20px" class="text_a">{{ __('words.sign_text') }}</span>
@@ -179,7 +183,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                     <img src="{{ asset( $active->photo) }}" alt=""/>
                                 </div>
                                 <div class="card-details">
-                                    <h2>{{ $active['title_' . $lang] }}</h2>
+                                    <h2 class="bgg">{{ $active['title_' . $lang] }}</h2>
                                     <ul>
                                         <li>{{ $active['description_' . $lang] }}</li>
                                     </ul>
@@ -191,14 +195,13 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             </div>
         </section>
 
-        <section style="border-radius: 30px;background: url('../assets/img/maktabim.jpg');background-size: cover; max-width: 100%;" id="sign_up" class="hero px-3 mx-2 d-flex align-items-center">
+        <section >
             <div class="container">
-                <div class="text-center text-white solo"><h1>{{ __('words.process') }}</h1></div>
-                <div class="text-center text-white mb-3 solo_back"><h1>{{ __('words.process') }}</h1></div>
+                <div class="text-center text-dark mb-3 solo"><h1>{{ __('words.process') }}</h1></div>
+                <div class="text-center text-dark mb-3 solo_back"><h1>{{ __('words.process') }}</h1></div>
                 <div class="row">
-                    <div class="col-md-1"></div>
                     <div class="col-md-4">
-                        <a href="#" class="card education">
+                        <div  class="card education">
                             <div class="overlay"></div>
                             <div class="circle">
 
@@ -234,13 +237,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             </div>
                             <p>{{ __('words.card_a') }}</p>
                             <p class="text-center">{{ __('words.card_a_text') }}</p>
-                        </a>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8"></div>
                     <div class="col-md-4">
-                        <a href="#" class="card credentialing">
+                        <div class="card credentialing">
                             <div class="overlay"></div>
                             <div class="circle">
 
@@ -275,13 +275,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             </div>
                             <p>{{ __('words.card_b') }}</p>
                             <p class="text-center">{{ __('words.card_b_text') }}</p>
-                        </a>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2"></div>
                     <div class="col-md-4">
-                        <a href="#" class="card human-resources">
+                        <div class="card human-resources">
                             <div class="overlay"></div>
                             <div class="circle">
 
@@ -301,9 +298,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             </div>
                             <p>{{ __('words.card_c') }}</p>
                             <p class="text-center">{{ __('words.card_c_text') }}</p>
-                        </a>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
         <section id="faq" class="faq section-bg">
@@ -361,31 +359,14 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="row">
                         <div class="col-md-6 text-white solo">
                             <div class="row">
-                                <span style="font-size: 58px" class="text_a">{{ __('words.connect') }}</span>
-                                <div class="col-lg-6 col-md-12 footer-links d-flex">
-                                    @foreach($contacts as $contact)
-                                    <div>
-                                        <ul>
-                                            <li><i class="bx bxl-telegram"></i> <a href="{{ $contact->telegram }}" class="text-white">Telegram</a></li>
-                                            <li><i class="bx bxl-instagram"></i> <a href="{{ $contact->instagram }}" class="text-white">Instagram</a></li>
-                                            <li><i class="bx bxl-youtube"></i> <a href="{{ $contact->youtube }}" class="text-white">Youtube</a></li>
-                                            <li><i class="bx bxl-linkedin"></i> <a href="{{ $contact->linkedin }}" class="text-white">Linkedin</a></li>
+                                <span style="font-size: 50px" class="text_a">{{ __('words.connect') }}</span>
 
-                                        </ul>
-                                    </div>
-                                    <ul>
-                                        <li><i class="bx bxl-facebook"></i> <a href="{{ $contact->facebook }}" class="text-white">Facebook</a></li>
-                                        <li><a href="{{ $contact->facebook }}" class="text-white">{{ $contact->phone_number }}</a></li>
-
-                                    </ul>
-                                    @endforeach
-                                </div>
                                 <h4>{{ __('words.location') }}</h4><br>
                                 <h5>{{ __('words.loc') }}:</h5>
                             </div>
                         </div>
                         <div class="col-md-6 text-white mb-3 solo_back">
-                            <span style="font-size: 20px" class="text_a">{{ __('words.sign_text') }}</span>
+                            <span style="font-size: 20px; margin-top: 12px;" class="text_a">{{ __('words.sign_text') }}</span>
                         </div>
                         <div class="col-md-2"></div>
                         <div class="col-md-4">

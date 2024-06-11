@@ -20,7 +20,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="container">
                 <div class="row mx-3">
                     <div class="text-center">
-                        <h1>{{ __('words.infrastructure') }}</h1>
+                        <h1 class="color-dark">{{ __('words.infrastructure') }}</h1>
                     </div>
                         <div class="col-md-5 mt-5 infrastructure">
                             @foreach($infrastructure as $inf)
@@ -95,13 +95,13 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="row">
                         @foreach($teachers as $teacher)
                             <div class="col-md-3 text-center">
-                                <a href="/shohruh" class="text-center">
+                                <div class="text-center">
                                     <img src="{{ asset( $teacher->photo) }}" class="card-img-top" alt="..." style="height: 200px;width: 200px;border-radius: 50%">
                                     <div class="card-body">
                                         <b>{{ $teacher->title_uz }}</b>
                                         <p class="text-center">{{ $teacher['description_' . $lang] }}</p>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         @endforeach
                     </div>
@@ -114,8 +114,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 text-white solo">
-                            <span style="font-size: 58px" class="text_a">{{ __('words.sign_text') }}</span>
-                            <h4 style="color: white;font-size: 27px" class="text_b">{{ __('words.info') }}</h4>
+                            <span style="font-size: 50px" class="text_a">{{ __('words.sign_text') }}</span>
+                            <h4 style="color: white;font-size: 24px;margin-top: 15px;" class="text_b">{{ __('words.info') }}</h4>
                         </div>
                         <div class="col-md-6 text-white mb-3 solo_back">
                             <span style="font-size: 20px" class="text_a">{{ __('words.connect') }}</span>
@@ -180,25 +180,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="row">
                         <div class="col-md-6 text-white solo">
                             <div class="row">
-                                <span style="font-size: 58px" class="text_a">{{ __('words.connect') }}</span>
-                                <div class="col-lg-6 col-md-12 footer-links d-flex">
-                                    @foreach($contacts as $contact)
-                                        <div>
-                                            <ul>
-                                                <li><i class="bx bxl-telegram"></i> <a href="{{ $contact->telegram }}" class="text-white">Telegram</a></li>
-                                                <li><i class="bx bxl-instagram"></i> <a href="{{ $contact->instagram }}" class="text-white">Instagram</a></li>
-                                                <li><i class="bx bxl-youtube"></i> <a href="{{ $contact->youtube }}" class="text-white">Youtube</a></li>
-                                                <li><i class="bx bxl-linkedin"></i> <a href="{{ $contact->linkedin }}" class="text-white">Linkedin</a></li>
+                                <span style="font-size: 50px" class="text_a">{{ __('words.connect') }}</span>
 
-                                            </ul>
-                                        </div>
-                                        <ul>
-                                            <li><i class="bx bxl-facebook"></i> <a href="{{ $contact->facebook }}" class="text-white">Facebook</a></li>
-                                            <li><a href="{{ $contact->facebook }}" class="text-white">{{ $contact->phone_number }}</a></li>
-
-                                        </ul>
-                                    @endforeach
-                                </div>
                                 <h4>{{ __('words.location') }}</h4><br>
                                 <h5>{{ __('words.loc') }}</h5>
                             </div>

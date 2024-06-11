@@ -91,7 +91,7 @@ p {
 .card1 {
     display: block;
     top: 0px;
-    position: relative;
+
     max-width: 100%;
     background-color: #e3f7fa;
     border-radius: 15px;
@@ -151,7 +151,12 @@ p {
         opacity: 1;
     }
 }
-
+.card1 h3{
+    font-size: 19px;
+}
+.card1 p{
+    font-size: 16px;
+}
 .card3 {
     display: block;
     top: 0px;

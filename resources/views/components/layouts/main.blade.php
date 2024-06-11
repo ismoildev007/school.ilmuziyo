@@ -45,7 +45,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">{{__('words.home')}}</a></li>
+                <li><a class="nav-link scrollto active" href="/">{{__('words.home')}}</a></li>
                 <li><a class="nav-link scrollto" href="#why_us">{{ __('words.educational') }}</a></li>
                 <li><a class="nav-link scrollto" href="#haqida">{{ __('words.about') }}</a></li>
                 <li><a class="nav-link scrollto" href="#contact">{{ __('words.con') }}</a></li>
